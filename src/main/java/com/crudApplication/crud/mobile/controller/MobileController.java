@@ -4,6 +4,7 @@ import com.crudApplication.crud.mobile.entity.Mobile;
 import com.crudApplication.crud.mobile.service.MobileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,6 +13,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class MobileController {
     @Autowired
     MobileService mobileService;
+    @GetMapping("/mobiles")
+    public String getAllMobiles(Model model) {
+        model.addAttribute("allMobiles",mobileService.getAllMobiles());
+        return "view_mobiles";
+    }
     @GetMapping("/add_mobile")
     public String addMobile(){
         return "add_mobile";
