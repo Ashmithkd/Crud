@@ -28,4 +28,9 @@ public class MobileController {
         mobileService.createMobile(mobile);
         return "redirect:/add_mobile";
     }
+    @PostMapping("/deleteMobile")
+    public String deleteMobile(@RequestParam Long id){
+        mobileService.deleteMobile(id);
+        return "redirect:/mobiles";
+    }
 }

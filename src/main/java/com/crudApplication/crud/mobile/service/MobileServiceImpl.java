@@ -20,4 +20,9 @@ public class MobileServiceImpl implements MobileService{
     public List<Mobile> getAllMobiles() {
         return mobileRepository.findAll();
     }
+
+    @Override
+    public void deleteMobile(Long id) {
+        mobileRepository.deleteById(id);
+    }
 }

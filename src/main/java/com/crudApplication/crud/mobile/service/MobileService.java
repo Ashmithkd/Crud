@@ -9,4 +9,6 @@ import java.util.List;
 public interface MobileService {
     void createMobile(Mobile mobile);
     List<Mobile> getAllMobiles();
+    void deleteMobile(Long id);
+
 }
