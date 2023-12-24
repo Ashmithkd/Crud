@@ -33,4 +33,15 @@ public class MobileController {
         mobileService.deleteMobile(id);
         return "redirect:/mobiles";
     }
+    @GetMapping("/updateMobile")
+    public String updateMobile(@RequestParam Long id,Model model){
+        Mobile mobile=mobileService.getMobile(id);
+        model.addAttribute("mobile",mobile);
+        return "update_mobile";
+    }
+    @PostMapping("/processUpdate")
+    public String processUpdate(@RequestParam String brand, @RequestParam int ram, @RequestParam int storage, @RequestParam String model, @RequestParam Long id){
+        mobileService.updateMobile(id,brand,ram,storage,model);
+        return "redirect:/mobiles";
+    }
 }

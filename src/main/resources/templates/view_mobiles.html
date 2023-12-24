@@ -10,6 +10,10 @@
     <span th:text="${mobile.model}"></span>
     <span th:text="${mobile.ram}"></span>
     <span th:text="${mobile.storage}"></span>
+    <form th:action="@{/updateMobile}">
+        <input type="hidden" name="id" th:value="${mobile.id}">
+        <input type="submit" value="Edit mobile">
+    </form>
     <form th:action="@{/deleteMobile}" method="post">
         <input type="hidden" name="id" th:value="${mobile.id}">
         <input type="submit" value="Delete this mobile">

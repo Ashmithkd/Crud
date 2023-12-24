@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="processUpdate" object="mobile" method="post">
+    <br>Brand: <input type="text" name="brand" th:value="${mobile.brand}">
+    <br>Model: <input type="text" name="model" th:value="${mobile.model}">
+    <br>Brand: <input type="number" name="ram" th:value="${mobile.ram}">
+    <br>Storage: <input type="number" name="storage" th:value="${mobile.storage}">
+    <input type="hidden" name="id" th:value="${mobile.id}">
+    <input type="submit">
+</form>
+</body>
+</html>

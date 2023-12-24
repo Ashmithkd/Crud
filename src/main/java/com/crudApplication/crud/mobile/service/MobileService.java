@@ -10,5 +10,7 @@ public interface MobileService {
     void createMobile(Mobile mobile);
     List<Mobile> getAllMobiles();
     void deleteMobile(Long id);
+    Mobile getMobile(Long id);
 
+    void updateMobile(Long id,String brand, int ram, int storage, String model);
 }

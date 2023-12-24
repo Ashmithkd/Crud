@@ -25,4 +25,19 @@ public class MobileServiceImpl implements MobileService{
     public void deleteMobile(Long id) {
         mobileRepository.deleteById(id);
     }
+
+    @Override
+    public Mobile getMobile(Long id) {
+        return mobileRepository.getMobileById(id);
+    }
+
+    @Override
+    public void updateMobile(Long id,String brand, int ram, int storage, String model) {
+       Mobile mobile=mobileRepository.getMobileById(id);
+       mobile.setBrand(brand);
+       mobile.setRam(ram);
+       mobile.setStorage(storage);
+       mobile.setModel(model);
+       mobileRepository.save(mobile);
+    }
 }
